@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shabnam:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Samim:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sahel:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazir', 'Shabnam', 'Samim', 'Sahel', 'IRANSans', 'Tahoma', 'Iranian Sans', 'B Nazanin', 'Segoe UI', Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 30px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-family: 'Shabnam', 'Vazir', 'Samim', sans-serif;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+header h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    opacity: 0.95;
+    font-family: 'Vazir', 'Samim', sans-serif;
+    letter-spacing: 0.3px;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cipher-tool {
+    padding: 40px;
+}
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 1.1em;
+    text-align: right;
+    font-family: 'Vazir', 'Shabnam', sans-serif;
+    letter-spacing: 0.2px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Vazir', 'Shabnam', 'Samim', inherit;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.3s ease;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+    direction: ltr;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.shift-info {
+    margin-right: 15px;
+    color: #666;
+    font-size: 0.9em;
+    font-family: 'Vazir', 'Samim', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* Persian numerals styling */
+.persian-numerals {
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    font-feature-settings: "ss01";
+}
+
+/* Custom checkbox styles */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-right: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #f8f9fa;
+    border-color: #3498db;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    right: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    font-family: 'Vazir', 'Shabnam', sans-serif;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-encrypt {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.btn-decrypt {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+    border: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+.btn-clear {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: white;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+.btn-copy {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.output-section textarea {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.info-section {
+    background: #f8f9fa;
+    padding: 30px 40px;
+    border-top: 1px solid #e0e0e0;
+    text-align: right;
+    direction: rtl;
+}
+
+.info-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-family: 'Shabnam', 'Vazir', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.info-section p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    font-family: 'Vazir', 'Samim', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+.info-section strong {
+    color: #4facfe;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    header h2 {
+        font-size: 1.2em;
+    }
+    
+    .cipher-tool, .info-section {
+        padding: 20px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Enhanced Persian typography */
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Persian text improvements */
+.persian-text {
+    font-family: 'Vazir', 'Shabnam', 'Samim', sans-serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+}
+
+/* Custom scrollbar for Persian content */
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%);
+}
